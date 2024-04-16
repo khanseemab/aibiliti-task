@@ -10,6 +10,7 @@ import BlogActivity from "../Sections/BlogActivity/BlogActivity";
 import Head from "./Head";
 import ButtonAppBar from "./DrawerComp/DrawerComponent";
 import { IconChevronLeft, IconChevronRight, IconX } from "@tabler/icons-react";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const Maincomponent = () => {
   const [open, setOpen] = useState(false);
@@ -22,12 +23,15 @@ const Maincomponent = () => {
       setContent(component);
     };
 
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.up("sm"));
+  const drawerWidth = isMobile ? 850 : "70%";
   const drawerList = () => {
     switch (content) {
       case "About":
         return (
-          <Box width={650}>
-             <Grid
+          <Box width={drawerWidth}>
+            <Grid
               item
               mt={3}
               ml={0}
@@ -49,7 +53,8 @@ const Maincomponent = () => {
                     marginLeft: "1rem",
                   }}
                 >
-About                </Typography>
+                  About{" "}
+                </Typography>
               </div>
               <IconX />
             </Grid>
@@ -61,7 +66,7 @@ About                </Typography>
         );
       case "Products":
         return (
-          <Box width={850}>
+          <Box width={drawerWidth}>
             <Grid
               item
               mt={3}
@@ -87,7 +92,7 @@ About                </Typography>
                   Products & Services
                 </Typography>
               </div>
-              <IconX />
+              <IconX onClose={toggleDrawer(null, false)} />
             </Grid>
             <Divider style={{ margin: "1rem 0rem 2rem 0rem" }} />
             <Grid item container>
@@ -113,7 +118,7 @@ About                </Typography>
         );
       case "Industries":
         return (
-          <Box width={850}>
+          <Box width={drawerWidth}>
             <Grid
               item
               mt={3}
@@ -139,7 +144,7 @@ About                </Typography>
                   Top Industries & Clients
                 </Typography>
               </div>
-              <IconX />
+              <IconX onClose={toggleDrawer(null, false)} />
             </Grid>
             <Divider style={{ margin: "1rem 0rem 2rem 0rem" }} />
             <Divider style={{ margin: "0.6rem 0rem 2rem 0rem" }} />
@@ -153,7 +158,6 @@ About                </Typography>
                         <Industries />
                       </Paper>
                     </Grid>
-                    
                   </React.Fragment>
                 ))}
               </Grid>
@@ -162,7 +166,7 @@ About                </Typography>
         );
       case "LeaderShip":
         return (
-          <Box width={850}>
+          <Box width={drawerWidth}>
             <Grid
               item
               mt={3}
@@ -188,11 +192,11 @@ About                </Typography>
                   LeaderShip
                 </Typography>
               </div>
-              <IconX />
+              <IconX onClose={toggleDrawer(null, false)} />
             </Grid>
             <Divider style={{ margin: "0.6rem 0rem 2rem 0rem" }} />
             <Grid item container>
-              <Grid item container columnSpacing={3} >
+              <Grid item container columnSpacing={3}>
                 {/* forloop to print item 3 times */}
                 {Array.from({ length: 3 }).map((_, i) => (
                   <React.Fragment key={i}>
@@ -201,7 +205,6 @@ About                </Typography>
                         <Leadership />
                       </Paper>
                     </Grid>
-                    
                   </React.Fragment>
                 ))}
               </Grid>
@@ -210,8 +213,8 @@ About                </Typography>
         );
       case "SWOT":
         return (
-          <Box width={850}>
-             <Grid
+          <Box width={drawerWidth}>
+            <Grid
               item
               mt={3}
               ml={0}
@@ -236,7 +239,7 @@ About                </Typography>
                   SWOT
                 </Typography>
               </div>
-              <IconX />
+              <IconX onClose={toggleDrawer(null, false)} />
             </Grid>
             <Divider style={{ margin: "0.6rem 0rem 2rem 0rem" }} />
             <Grid item container>
@@ -244,10 +247,9 @@ About                </Typography>
                 {/* forloop to print item 3 times */}
                 {Array.from({ length: 2 }).map((_, i) => (
                   <React.Fragment key={i}>
-                   
                     <Grid item xs={6}>
                       <Paper>
-                      <SWOT />
+                        <SWOT />
                       </Paper>
                     </Grid>
                   </React.Fragment>
@@ -258,7 +260,7 @@ About                </Typography>
         );
       case "Positioning":
         return (
-          <Box width={850}>
+          <Box width={drawerWidth}>
             <Grid
               item
               mt={3}
@@ -284,7 +286,7 @@ About                </Typography>
                   Positioning
                 </Typography>
               </div>
-              <IconX />
+              <IconX onClose={toggleDrawer(null, false)} />
             </Grid>
             <Divider style={{ margin: "0.6rem 0rem 2rem 0rem" }} />
             <Grid item container>
@@ -292,10 +294,9 @@ About                </Typography>
                 {/* forloop to print item 3 times */}
                 {Array.from({ length: 2 }).map((_, i) => (
                   <React.Fragment key={i}>
-                    
                     <Grid item xs={6}>
                       <Paper>
-                      <Positioning />
+                        <Positioning />
                       </Paper>
                     </Grid>
                   </React.Fragment>
@@ -306,8 +307,8 @@ About                </Typography>
         );
       case "BlogActivity":
         return (
-          <Box width={850}>
-           <Grid
+          <Box width={drawerWidth}>
+            <Grid
               item
               mt={3}
               ml={0}
@@ -332,7 +333,7 @@ About                </Typography>
                   Blog Activity
                 </Typography>
               </div>
-              <IconX />
+              <IconX onClose={toggleDrawer(null, false)} />
             </Grid>
             <Divider style={{ margin: "0.6rem 0rem 2rem 0rem" }} />
             <Grid item container>
@@ -363,7 +364,12 @@ About                </Typography>
 
   return (
     <>
-      <Drawer anchor="right" open={open} onClose={toggleDrawer(null, false)}>
+      <Drawer
+        anchor="right"
+        open={open}
+        onClose={toggleDrawer(null, false)}
+        sx={{ width: isMobile ? "10%" : "10px" }}
+      >
         {drawerList()}
       </Drawer>
 

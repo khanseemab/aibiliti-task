@@ -38,7 +38,7 @@ const About = () => {
           <Grid item>
             <Typography variant="caption">eVaro Corporation</Typography>
           </Grid>
-          <Grid item>
+          <Grid className={Styles.company_sector} item>
             <Typography variant="caption">
               Software Development Healthcare
             </Typography>
