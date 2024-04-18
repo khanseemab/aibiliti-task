@@ -119,8 +119,8 @@ const BlogActivity = () => {
       <Grid container>
         {/* Title  */}
         <Grid item>
-          <Typography variant="h6">
-            <h5>Blog Activity</h5>
+          <Typography variant="MainHeading">
+            Blog Activity
           </Typography>
         </Grid>
 

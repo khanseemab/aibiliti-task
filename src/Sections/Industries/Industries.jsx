@@ -19,8 +19,8 @@ const IndustriesItem = [
 const Industries = () => {
   return (
     <Box>
-      <Typography variant="h6">
-        <h5>Top Industries & Clients</h5>
+      <Typography variant="MainHeading">
+        Top Industries & Clients
       </Typography>
       <Grid container direction="column" >
         {IndustriesItem.slice(0, 5).map((item) => (
@@ -33,7 +33,7 @@ const Industries = () => {
         ))}
 
         <Grid item>
-          <Typography variant="caption"><br/>
+          <Typography variant="caption">
             +3 more
           </Typography>
         </Grid>

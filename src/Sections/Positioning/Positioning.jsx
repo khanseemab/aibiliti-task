@@ -51,11 +51,11 @@ const Positioning = () => {
 
   return (
     <Box>
-      <Typography variant="h6">
-        <h5>Positioning</h5>
+      <Typography variant="MainHeading">
+        Positioning
         {/* <h5>Positioning</h5> */}
       </Typography>
-      <Grid container direction="column">
+      <Grid container direction="column" mt={1}>
         {IndustriesItem.map((item) => (
           <Grid item mb={1}>
             <Typography variant="caption">

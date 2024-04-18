@@ -51,10 +51,10 @@ const SWOT = () => {
 
   return (
     <Box>
-      <Typography variant="h6">
-        <h5>SWOT</h5>
+      <Typography variant="MainHeading">
+        SWOT
       </Typography>
-      <Grid container direction="column">
+      <Grid container direction="column" mt={1}>
         {IndustriesItem.map((item) => (
           <Grid item mb={1}>
             <Typography variant="caption">

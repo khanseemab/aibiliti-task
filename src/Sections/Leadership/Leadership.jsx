@@ -26,10 +26,10 @@ const Leadership = () => {
   // const companyLeadership = data.company.leadership;
   return (
     <Box>
-      <Typography variant="h6">
-        <h5>Leadership</h5>
+      <Typography  variant="MainHeading">
+        Leadership
       </Typography>
-      <Grid container direction="column" mt={2}>
+      <Grid container direction="column" mt={1}>
         {IndustriesItem.slice(0, 4).map((item, index) => (
           <Grid item key={index} mb={1}>
             <Typography variant="caption" > 

@@ -49,7 +49,7 @@ const ProductsAndServices = () => {
     <Grid container>
       {/* Title  */}
       <Grid item>
-        <Typography variant="h6"><h5>Products & Services</h5></Typography>
+        <Typography variant="MainHeading">Products & Services</Typography>
       </Grid>
 
       {/* Company Name and description  */}

@@ -13,8 +13,8 @@ const About = () => {
     <Grid container>
       {/* Title  */}
       <Grid item>
-        <Typography variant="h6">
-          <h5>About</h5>
+        <Typography variant="MainHeading">
+          About
         </Typography>
       </Grid>
 
@@ -25,7 +25,7 @@ const About = () => {
         maxHeight={140}
         sx={{ textOverflow: "ellipsis", overflow: "hidden" }}
       >
-        <Grid item xs={6} container direction="column">
+        <Grid item xs={6} container direction="column" mt={1}>
           <Grid>
             <img
               src={eVeroLogo}

@@ -1,7 +1,11 @@
-import { Grid, Paper, Typography } from "@mui/material";
-import { IconMailFilled, IconPlus } from "@tabler/icons-react";
-import React from "react";
+import { Grid, Box, Typography } from "@mui/material";
+import { IconArrowRight, IconPlus } from "@tabler/icons-react";
+import React,{useState} from "react";
 import { useMediaQuery, useTheme } from "@mui/material";
+
+import logo from "../assets/eVero.jpeg";
+import logo1 from "../assets/Osedea.jpeg";
+import logo2 from "../assets/Kanda_Software.png";
 const themeSelected = {
   height: "2rem",
   display: "flex",
@@ -26,6 +30,7 @@ const centerItem = {
 };
 
 const Head = () => {
+  const [isHovered,setIsHovered] = useState(false)
   const themMobile = useTheme();
   const isMobile = useMediaQuery(themMobile.breakpoints.up("sm"));
   return (
@@ -62,19 +67,40 @@ const Head = () => {
             <Grid item xs={6} container alignItems="center" >
               <Grid style={themeSelected} >
                 <Typography variant="caption" style={centerItem}>
-                  <IconMailFilled size={20} color="#cccccc" />
+                  {/* <IconMailFilled size={20} color="#cccccc" /> */}
+                  <img
+            src={logo}
+            alt="Aibiliti"
+            width="25px"
+            height="25px"
+            style={{borderRadius: "50%"}}
+          />
                   &nbsp; eVero Corporation
                 </Typography>
               </Grid>
               <Grid style={theme}>
                 <Typography variant="caption" style={centerItem}>
-                  <IconMailFilled size={20} color="#cccccc" />
+                  {/* <IconMailFilled size={20} color="#cccccc" /> */}
+                  <img
+            src={logo1}
+            alt="Aibiliti"
+            width="25px"
+            height="25px"
+            style={{borderRadius: "50%"}}
+          />
                   &nbsp; Kanda Software
                 </Typography>
               </Grid>
               <Grid style={theme}>
                 <Typography variant="caption" style={centerItem}>
-                  <IconMailFilled size={20} color="#cccccc" />
+                  {/* <IconMailFilled size={20} color="#cccccc" /> */}
+                  <img
+            src={logo2}
+            alt="Aibiliti"
+            width="25px"
+            height="25px"
+            style={{borderRadius: "50%"}}
+          />
                   &nbsp; Osedea
                 </Typography>
               </Grid>
@@ -94,8 +120,15 @@ const Head = () => {
               xs={2}
               justify={"center"}
               alignItems={"center"}
+             
+              
             >
-              <Typography varian="caption">Combined Report</Typography>
+              <Typography
+               onMouseEnter={()=>setIsHovered(true)}
+               onMouseLeave={()=>setIsHovered(false)}
+              sx={{padding:"0.5rem 1rem",fontSize:"0.82em",fontWeight:"400",cursor:"pointer",backgroundColor:isHovered?"#F2F2F2":"#fff",borderRadius:"0.4rem"}}><Box display="flex" alignItems="center">
+              Combined Report {isHovered && (<>&nbsp; <IconArrowRight size={20} /></>)}
+            </Box></Typography>
             </Grid>
           </>
         )}

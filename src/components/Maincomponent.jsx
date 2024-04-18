@@ -374,9 +374,9 @@ const Maincomponent = () => {
       </Drawer>
 
       <Box>
-        <Grid container pb={5} pl={5} mt={5}>
+        <Grid container pb={5} pl={5} mt={4}>
           {/* for about and Products  */}
-          <Grid xs={12} item container columnSpacing={2}>
+          <Grid xs={12} item container columnSpacing={3}>
             <Grid item xs={5}>
               <Paper onClick={toggleDrawer("About")}>
                 <About />
@@ -389,7 +389,7 @@ const Maincomponent = () => {
             </Grid>
           </Grid>
 
-          <Grid item container mt={2} columnSpacing={3}>
+          <Grid item container mt={3} columnSpacing={3}>
             {/* Top Industries and Positioning  */}
             <Grid item xs={3} container direction="column">
               <Grid item>
@@ -422,7 +422,7 @@ const Maincomponent = () => {
             <Grid item xs={6}>
               <Paper
                 onClick={toggleDrawer("BlogActivity")}
-                sx={{ height: "80.2vh" }}
+                sx={{ height: "99.7%" }}
               >
                 <BlogActivity />
               </Paper>

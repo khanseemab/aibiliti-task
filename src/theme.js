@@ -16,9 +16,9 @@ const theme = createTheme({
         root: {
           border: '1px solid #D9D9D9',
           cursor: 'pointer',
-          padding: '0rem 0.9rem',
+          padding: '1rem 0.9rem 0rem 0.9rem',
           borderRadius: '15px',
-          minHeight: '20rem',
+          minHeight: '17.5rem',
           boxShadow: 'none',
           '&:hover': {
             boxShadow: '0px 0px 30px 1px #e6e6e6',
@@ -37,6 +37,23 @@ const theme = createTheme({
         },
       },
     },
+    MuiTypography:{
+      styleOverrides:{  
+        root:{
+          fontFamily: 'Figtree',
+        },},
+      variants:[
+        {
+          props:{variant:'MainHeading'},
+          style:{
+            color: '#000000',
+            fontSize:'1.15rem',
+            lineHeight:'3rem',
+            fontWeight: '600',  
+          }
+        }
+      ]
+    }
     // MuiListItemButton:{
     //   styleOverrides:{
     //     root:{
@@ -54,6 +71,7 @@ const theme = createTheme({
   typography: {
     fontFamily: "Figtree",
   },
+  
     
 });
 
