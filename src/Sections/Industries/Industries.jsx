@@ -22,7 +22,7 @@ const Industries = () => {
       <Typography variant="MainHeading">
         Top Industries & Clients
       </Typography>
-      <Grid container direction="column" >
+      <Grid container direction="column" mt={1} >
         {IndustriesItem.slice(0, 5).map((item) => (
           <Grid item mb={1}>
             <Typography variant="caption">{item.title}</Typography><br/>
