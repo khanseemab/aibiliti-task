@@ -54,6 +54,10 @@ import {
             display: false,
           },
           tooltip: {
+            // displayColors: false,
+            
+            position: 'top',
+            // backgroundColor: 'transparent',
             callbacks: {
               label: function (context) {
                 let label = context.dataset.label || "";
